@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/reading
+    username: app
+    password: app
+#  jpa:
+#    hibernate:
+#      ddl-auto: validate
+#    properties:
+#      hibernate.jdbc.lob.non_contextual_creation: true
+  spring:
+    jpa:
+      properties:
+        hibernate.jdbc.batch_size: 1000
+        hibernate.order_inserts: true
+        hibernate.order_updates: true
+        hibernate.jdbc.batch_versioned_data: true
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+server:
+  port: 8080
+app:
+  data-dir: data
