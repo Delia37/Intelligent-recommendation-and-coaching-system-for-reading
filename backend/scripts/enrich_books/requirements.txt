@@ -1,0 +1,5 @@
+python-dotenv==1.0.1
+requests==2.32.3
+psycopg2-binary==2.9.10
+tqdm==4.66.5
+tenacity==9.0.0

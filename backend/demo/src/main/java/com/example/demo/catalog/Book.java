@@ -6,9 +6,11 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "books")
-@Getter @Setter
+@Getter
+@Setter
 public class Book {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "isbn13", unique = true)

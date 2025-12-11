@@ -17,6 +17,7 @@ import jakarta.persistence.PersistenceContext;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -33,6 +34,7 @@ import java.util.Map;
 
 @Component
 @RequiredArgsConstructor
+@ConditionalOnProperty(name="app.import.enabled", havingValue="true")
 public class KaggleBxImportRunner implements CommandLineRunner {
 
     private static final Charset CSV_CHARSET = StandardCharsets.ISO_8859_1; // BX dataset charset
